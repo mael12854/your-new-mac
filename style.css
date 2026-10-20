@@ -17,6 +17,15 @@
     --mac-blush: #efcdd2;
     --mac-indigo: #4b5679;
     --mac-silver: #d6d9de;
+    --mac-citrus-fonce: #c8cf5f;
+    /* Illustrations */
+    --illu-body: #e6e8ec;
+    --illu-bezel: #1d1f24;
+    --illu-window: #ffffff;
+    --illu-barre: rgba(255, 255, 255, 0.72);
+    --illu-texte: #c9cdd4;
+    --illu-fond-a: #f6dfe3;
+    --illu-fond-b: #cfdaf7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +43,13 @@
         --key-edge: #3a3f4a;
         --shadow: none;
         --mac-silver: #9ea3ab;
+        --illu-body: #2c3039;
+        --illu-bezel: #000000;
+        --illu-window: #2a2e37;
+        --illu-barre: rgba(26, 29, 36, 0.78);
+        --illu-texte: #4a505c;
+        --illu-fond-a: #4a3540;
+        --illu-fond-b: #26335a;
     }
 }
 
@@ -260,7 +276,7 @@ code {
 }
 
 /* LocalSend mis en avant */
-.apps .app-vedette {
+.apps > div.app-vedette {
     margin-bottom: 16px;
     padding: 20px;
     background: var(--surface);
@@ -589,6 +605,112 @@ a:focus-visible {
     margin: 32px 0 0;
 }
 
+/* ---------- Illustrations (SVG dans la page, couleurs du thème) ---------- */
+
+.illu {
+    margin: 8px 0 20px;
+}
+
+.illu svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.illu figcaption {
+    margin-top: 10px;
+    font-size: 0.9375rem;
+    color: var(--muted);
+}
+
+.illu-hero {
+    max-width: 300px;
+    margin: 0 auto 40px;
+}
+
+.legende-illu {
+    margin: 12px 0 0;
+    padding-left: 1.4em;
+    color: var(--content);
+}
+
+.legende-illu li {
+    margin-bottom: 8px;
+}
+
+.gestes,
+.compare {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 8px 0 20px;
+}
+
+@media (min-width: 560px) {
+    .gestes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.gestes .illu,
+.compare .illu {
+    margin: 0;
+}
+
+.gestes figcaption,
+.compare figcaption {
+    text-align: center;
+}
+
+.illu-touchid {
+    max-width: 320px;
+}
+
+.i-bezel { fill: var(--illu-bezel); }
+.i-barre { fill: var(--illu-barre); }
+.i-fenetre { fill: var(--illu-window); }
+.i-texte { fill: var(--illu-texte); }
+.i-corps { fill: var(--illu-body); }
+.i-fond-a { stop-color: var(--illu-fond-a); }
+.i-fond-b { stop-color: var(--illu-fond-b); }
+.i-capot { fill: var(--mac-citrus); }
+.i-logo { fill: var(--mac-citrus-fonce); }
+.i-pomme-menu { fill: var(--content); }
+.i-app-a { fill: var(--mac-citrus); }
+.i-app-b { fill: var(--mac-blush); }
+.i-app-c { fill: var(--mac-indigo); }
+.i-app-d { fill: var(--mac-silver); }
+.i-app-e { fill: var(--accent); }
+.i-repere circle { fill: var(--accent); }
+.i-repere text {
+    fill: #ffffff;
+    font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.i-pave { fill: var(--illu-body); stroke: var(--key-edge); }
+.i-doigt { fill: var(--accent); }
+.i-onde { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0.35; }
+.i-fleche {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.i-touche { fill: var(--key-top); stroke: var(--key-edge); }
+.i-touche-active { stroke: var(--accent); stroke-width: 2.5; }
+.i-capteur { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+.i-cadre { fill: var(--card); stroke: var(--key-edge); }
+.i-sep { stroke: var(--key-edge); }
+.i-trait {
+    fill: none;
+    stroke: var(--muted);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+}
+.rouge { fill: #ff5f57; }
+.jaune { fill: #febc2e; }
+.vert { fill: #28c840; }
+
 /* ---------- Pied de page ---------- */
 
 footer {
@@ -617,4 +739,8 @@ footer {
     html {
         scroll-behavior: smooth;
     }
+}
+
+.illu-ls {
+    max-width: 340px;
 }
