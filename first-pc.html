@@ -35,6 +35,16 @@
             <li class="etape" id="allumer">
                 <h2>Allumer et éteindre</h2>
                 <p>Sur un MacBook, il suffit souvent d’<strong>ouvrir l’écran</strong> pour l’allumer. Sinon, appuyez sur la touche en haut à droite du clavier&#8239;: c’est le bouton d’alimentation, qui sert aussi de lecteur d’empreinte (Touch ID).</p>
+                <figure class="illu illu-touchid">
+                    <svg viewBox="0 0 220 80" role="img" aria-label="La rangée du haut du clavier, avec la touche Touch ID mise en évidence tout à droite">
+                        <rect class="i-touche" x="8" y="16" width="44" height="48" rx="8"/>
+                        <rect class="i-touche" x="58" y="16" width="44" height="48" rx="8"/>
+                        <rect class="i-touche" x="108" y="16" width="44" height="48" rx="8"/>
+                        <rect class="i-touche i-touche-active" x="158" y="16" width="54" height="48" rx="8"/>
+                        <circle class="i-capteur" cx="185" cy="40" r="13"/>
+                    </svg>
+                    <figcaption>La touche Touch ID, tout en haut à droite du clavier.</figcaption>
+                </figure>
                 <p>Pour éteindre, cliquez sur le <strong>menu Pomme</strong> (le logo tout en haut à gauche de l’écran), puis sur <strong>Éteindre</strong>.</p>
                 <p class="astuce">Pas besoin d’éteindre tous les soirs. Fermer l’écran met le Mac en veille&#8239;: il consomme très peu et se réveille instantanément.</p>
             </li>
@@ -42,6 +52,44 @@
             <li class="etape" id="trackpad">
                 <h2>Utiliser le trackpad</h2>
                 <p>Le trackpad est la grande surface sous le clavier. Il remplace la souris.</p>
+                <div class="gestes">
+                    <figure class="illu">
+                        <svg viewBox="0 0 120 84" aria-hidden="true">
+                            <rect class="i-pave" x="2" y="2" width="116" height="80" rx="12"/>
+                            <circle class="i-onde" cx="60" cy="42" r="14"/>
+                            <circle class="i-doigt" cx="60" cy="42" r="7"/>
+                        </svg>
+                        <figcaption>Cliquer&#8239;: un doigt</figcaption>
+                    </figure>
+                    <figure class="illu">
+                        <svg viewBox="0 0 120 84" aria-hidden="true">
+                            <rect class="i-pave" x="2" y="2" width="116" height="80" rx="12"/>
+                            <circle class="i-onde" cx="51" cy="42" r="13"/>
+                            <circle class="i-onde" cx="69" cy="42" r="13"/>
+                            <circle class="i-doigt" cx="51" cy="42" r="7"/>
+                            <circle class="i-doigt" cx="69" cy="42" r="7"/>
+                        </svg>
+                        <figcaption>Clic droit&#8239;: deux doigts</figcaption>
+                    </figure>
+                    <figure class="illu">
+                        <svg viewBox="0 0 120 84" aria-hidden="true">
+                            <rect class="i-pave" x="2" y="2" width="116" height="80" rx="12"/>
+                            <circle class="i-doigt" cx="48" cy="42" r="7"/>
+                            <circle class="i-doigt" cx="66" cy="42" r="7"/>
+                            <path class="i-fleche" d="M88 22v40M83 27l5-5 5 5M83 57l5 5 5-5"/>
+                        </svg>
+                        <figcaption>Défiler&#8239;: glisser deux doigts</figcaption>
+                    </figure>
+                    <figure class="illu">
+                        <svg viewBox="0 0 120 84" aria-hidden="true">
+                            <rect class="i-pave" x="2" y="2" width="116" height="80" rx="12"/>
+                            <circle class="i-doigt" cx="50" cy="48" r="7"/>
+                            <circle class="i-doigt" cx="70" cy="36" r="7"/>
+                            <path class="i-fleche" d="M42 56 31 67M31 60v7h7M78 28l11-11M82 17h7v7"/>
+                        </svg>
+                        <figcaption>Zoomer&#8239;: écarter deux doigts</figcaption>
+                    </figure>
+                </div>
                 <ul>
                     <li><strong>Déplacer le pointeur</strong>&#8239;: glissez un doigt.</li>
                     <li><strong>Cliquer</strong>&#8239;: appuyez avec un doigt jusqu’à sentir un petit «&#8239;clic&#8239;».</li>
@@ -54,12 +102,64 @@
 
             <li class="etape" id="ecran">
                 <h2>Comprendre l’écran</h2>
-                <ul>
-                    <li><strong>La barre des menus</strong>, tout en haut&#8239;: à gauche, les menus de l’app que vous utilisez&#8239;; à droite, le Wi-Fi, la batterie, l’heure.</li>
-                    <li><strong>Le Dock</strong>, en bas&#8239;: la rangée d’icônes pour lancer vos apps préférées.</li>
-                    <li><strong>Le bureau</strong>&#8239;: tout l’espace au milieu, où s’ouvrent les fenêtres.</li>
-                </ul>
-                <p>Chaque fenêtre a trois boutons ronds en haut à gauche&#8239;: <strong>rouge</strong> pour la fermer, <strong>jaune</strong> pour la ranger dans le Dock, <strong>vert</strong> pour l’agrandir.</p>
+                <figure class="illu">
+                    <svg viewBox="0 0 320 196" role="img" aria-label="Schéma de l’écran du Mac avec quatre repères numérotés, détaillés juste en dessous">
+                        <defs>
+                            <linearGradient id="fond-ecran" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" class="i-fond-a"/>
+                                <stop offset="1" class="i-fond-b"/>
+                            </linearGradient>
+                            <clipPath id="clip-ecran">
+                                <rect x="8" y="8" width="304" height="180" rx="6"/>
+                            </clipPath>
+                            <mask id="croque-menu" maskUnits="userSpaceOnUse" x="-10" y="-10" width="140" height="140">
+                                <rect x="-10" y="-10" width="140" height="140" fill="#fff"/>
+                                <circle cx="106" cy="60" r="19" fill="#000"/>
+                            </mask>
+                        </defs>
+                        <rect class="i-bezel" x="0" y="0" width="320" height="196" rx="12"/>
+                        <g clip-path="url(#clip-ecran)">
+                            <rect x="8" y="8" width="304" height="180" fill="url(#fond-ecran)"/>
+                            <rect class="i-barre" x="8" y="8" width="304" height="13"/>
+                            <g class="i-pomme-menu" transform="translate(15 10.2) scale(0.075)">
+                                <path mask="url(#croque-menu)" d="M50 34C40 34 34 28 24 28 10 28 0 42 0 62c0 24 14 54 30 54 8 0 12-4 20-4s12 4 20 4c16 0 30-30 30-54 0-18-10-34-24-34-10 0-16 6-26 6z"/>
+                                <path d="M50 26C50 12 60 2 74 0 74 14 64 24 50 26z"/>
+                            </g>
+                            <rect class="i-texte" x="28" y="12.5" width="14" height="4" rx="2"/>
+                            <rect class="i-texte" x="46" y="12.5" width="10" height="4" rx="2"/>
+                            <rect class="i-texte" x="60" y="12.5" width="12" height="4" rx="2"/>
+                            <rect class="i-texte" x="262" y="12.5" width="10" height="4" rx="2"/>
+                            <rect class="i-texte" x="276" y="12.5" width="26" height="4" rx="2"/>
+                            <rect class="i-fenetre" x="56" y="40" width="176" height="104" rx="8"/>
+                            <circle class="rouge" cx="68" cy="51" r="3.6"/>
+                            <circle class="jaune" cx="79" cy="51" r="3.6"/>
+                            <circle class="vert" cx="90" cy="51" r="3.6"/>
+                            <rect class="i-texte" x="68" y="66" width="120" height="5" rx="2.5"/>
+                            <rect class="i-texte" x="68" y="78" width="150" height="5" rx="2.5"/>
+                            <rect class="i-texte" x="68" y="90" width="100" height="5" rx="2.5"/>
+                            <rect class="i-barre" x="86" y="164" width="148" height="20" rx="7"/>
+                            <rect class="i-app-a" x="94" y="168" width="12" height="12" rx="3"/>
+                            <rect class="i-app-b" x="113.5" y="168" width="12" height="12" rx="3"/>
+                            <rect class="i-app-c" x="133" y="168" width="12" height="12" rx="3"/>
+                            <rect class="i-app-e" x="152.5" y="168" width="12" height="12" rx="3"/>
+                            <rect class="i-app-d" x="172" y="168" width="12" height="12" rx="3"/>
+                            <rect class="i-app-a" x="191.5" y="168" width="12" height="12" rx="3"/>
+                            <rect class="i-app-b" x="211" y="168" width="12" height="12" rx="3"/>
+                        </g>
+                        <g class="i-repere"><circle cx="200" cy="14.5" r="9"/><text x="200" y="18.5" text-anchor="middle">1</text></g>
+                        <g class="i-repere"><circle cx="110" cy="51" r="9"/><text x="110" y="55" text-anchor="middle">2</text></g>
+                        <g class="i-repere"><circle cx="272" cy="104" r="9"/><text x="272" y="108" text-anchor="middle">3</text></g>
+                        <g class="i-repere"><circle cx="250" cy="174" r="9"/><text x="250" y="178" text-anchor="middle">4</text></g>
+                    </svg>
+                    <figcaption>
+                        <ol class="legende-illu">
+                            <li><strong>La barre des menus</strong>, tout en haut&#8239;: le menu Pomme à gauche, puis les menus de l’app que vous utilisez&#8239;; à droite, le Wi-Fi, la batterie, l’heure.</li>
+                            <li><strong>Les boutons de la fenêtre</strong>&#8239;: rouge pour la fermer, jaune pour la ranger dans le Dock, vert pour l’agrandir.</li>
+                            <li><strong>Le bureau</strong>&#8239;: tout l’espace au milieu, où s’ouvrent les fenêtres.</li>
+                            <li><strong>Le Dock</strong>, en bas&#8239;: la rangée d’icônes pour lancer vos apps préférées.</li>
+                        </ol>
+                    </figcaption>
+                </figure>
             </li>
 
             <li class="etape" id="apps">
