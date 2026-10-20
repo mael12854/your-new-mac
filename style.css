@@ -169,9 +169,20 @@ kbd {
 }
 
 .secondaire {
-    margin: 24px 0 0;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
     font-size: 0.9375rem;
     color: var(--muted);
+}
+
+.secondaire li + li {
+    margin-top: 8px;
+}
+
+code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
 }
 
 /* Liste des touches spéciales */
