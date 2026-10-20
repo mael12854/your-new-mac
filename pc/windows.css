@@ -1,0 +1,448 @@
+/* Guide PC : style Windows 11, inspiré de w11CSS (github.com/Laaouatni/w11CSS, licence MIT).
+   Chargé après ../style.css, il ne s'applique qu'aux pages <body class="pc">. */
+
+body.pc {
+    --surface: #0a1224;
+    --card: rgba(32, 32, 32, 0.72);
+    --content: #ffffff;
+    --muted: #c5c5c5;        /* 10:1 sur les panneaux */
+    --accent: #60cdff;       /* texte noir : 11:1 */
+    --accent-hover: #4fb8ea;
+    --link: #60cdff;         /* 9:1 sur les panneaux */
+    --line: rgba(255, 255, 255, 0.1);
+    --key-top: #2d2d2d;
+    --key-side: #1c1c1c;
+    --key-edge: #4a4a4a;
+    --illu-body: #2d2d2d;
+    --illu-bezel: #000000;
+    --illu-window: #2b2b2b;
+    --illu-barre: rgba(32, 32, 32, 0.85);
+    --illu-texte: #4d4d4d;
+    --verre: rgba(32, 32, 32, 0.72);
+    --verre-survol: rgba(50, 50, 50, 0.78);
+    --verre-bord: rgba(255, 255, 255, 0.08);
+
+    padding-bottom: 88px;
+    color-scheme: dark;
+    font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+    /* Lueur bleue façon fond d'écran Windows 11, dessinée en CSS */
+    background:
+        radial-gradient(ellipse 55% 45% at 72% 28%, rgba(30, 90, 255, 0.45), transparent 70%),
+        radial-gradient(ellipse 50% 45% at 28% 72%, rgba(0, 120, 212, 0.38), transparent 70%),
+        radial-gradient(ellipse 35% 30% at 55% 50%, rgba(96, 205, 255, 0.18), transparent 70%),
+        #0a1224;
+    background-attachment: fixed;
+}
+
+.pc h1,
+.pc h2,
+.pc .accueil h1 {
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* ---------- Barre des tâches (la navigation, en bas) ---------- */
+
+.pc .globalnav {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(32, 32, 32, 0.78);
+    -webkit-backdrop-filter: saturate(150%) blur(30px);
+    backdrop-filter: saturate(150%) blur(30px);
+    border-top: 1px solid var(--verre-bord);
+    border-bottom: none;
+}
+
+.pc .globalnav-inner {
+    justify-content: safe center;
+    gap: 4px;
+    max-width: none;
+    min-height: 52px;
+    padding: 0 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.pc .globalnav-logo,
+.pc .globalnav ul a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 4px;
+    color: var(--content);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    opacity: 1;
+}
+
+/* Bouton « Démarrer » : l'icône Windows avant le nom du site */
+.pc .globalnav-logo::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: url("icone-windows.png") center / contain no-repeat;
+}
+
+.pc .globalnav ul {
+    gap: 4px;
+    margin: 0;
+    overflow: visible;
+}
+
+.pc .globalnav-logo:hover,
+.pc .globalnav ul a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.pc .globalnav [aria-current="page"] {
+    background: rgba(255, 255, 255, 0.06);
+    font-weight: 400;
+}
+
+/* Petit trait bleu sous l'élément actif, comme sous une app ouverte */
+.pc .globalnav [aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    width: 16px;
+    height: 3px;
+    margin-left: -8px;
+    border-radius: 2px;
+    background: var(--accent);
+}
+
+/* ---------- Panneaux en verre dépoli ---------- */
+
+.pc .etape,
+.pc .sommaire,
+.pc .profil,
+.pc .bandeau {
+    background: var(--verre);
+    -webkit-backdrop-filter: saturate(150%) blur(30px);
+    backdrop-filter: saturate(150%) blur(30px);
+    border: 1px solid var(--verre-bord);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.pc .profil,
+.pc .bandeau {
+    transition: background-color 0.15s ease;
+}
+
+.pc .profil:hover,
+.pc .bandeau:hover {
+    transform: none;
+    background: var(--verre-survol);
+}
+
+.pc .profil:focus-visible,
+.pc .bandeau:focus-visible {
+    border-radius: 8px;
+}
+
+.pc .astuce {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+}
+
+.pc .badge,
+.pc .app-icone-lettre,
+.pc .app-vedette .badge,
+.pc .app-vedette .app-icone-lettre {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--verre-bord);
+}
+
+.pc .apps > div.app-vedette {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--verre-bord);
+    border-radius: 6px;
+}
+
+.pc .raccourcis th {
+    background: rgba(255, 255, 255, 0.04);
+    padding-left: 8px;
+}
+
+.pc .raccourcis td:first-child {
+    padding-left: 8px;
+}
+
+.pc kbd {
+    border-radius: 4px;
+}
+
+/* ---------- Boutons façon Windows 11 ---------- */
+
+.pc .bouton {
+    min-height: 44px;
+    padding: 10px 24px;
+    background: var(--accent);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.pc .bouton:hover {
+    background: var(--accent-hover);
+}
+
+.pc .bouton:focus-visible {
+    border-radius: 4px;
+}
+
+.pc .bouton-contour {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: var(--content);
+}
+
+.pc .bouton-contour:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.09);
+    color: var(--content);
+}
+
+.pc footer {
+    color: var(--muted);
+}
+
+/* ---------- Préférences d'accessibilité ---------- */
+
+@media (prefers-reduced-transparency: reduce) {
+    body.pc {
+        --verre: #202020;
+        --verre-survol: #2b2b2b;
+    }
+    .pc .globalnav,
+    .pc .etape,
+    .pc .sommaire,
+    .pc .profil,
+    .pc .bandeau {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+    .pc .globalnav {
+        background: #202020;
+    }
+}
+
+@media (prefers-contrast: more) {
+    body.pc {
+        --verre-bord: #ffffff;
+        --line: #ffffff;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pc .profil,
+    .pc .bandeau {
+        transition: none;
+    }
+}
+
+/* ---------- Accueil PC présenté comme le menu Démarrer ---------- */
+
+.pc .demarrer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 32px);
+    background: var(--verre);
+    -webkit-backdrop-filter: saturate(150%) blur(30px);
+    backdrop-filter: saturate(150%) blur(30px);
+    border: 1px solid var(--verre-bord);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    text-align: left;
+}
+
+.pc .demarrer-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 8px 12px;
+}
+
+.pc .demarrer-entete + .recommande {
+    margin-top: 0;
+}
+
+.pc .demarrer h3 {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.pc .epingles + .demarrer-entete {
+    margin-top: 24px;
+}
+
+/* Petit bouton en pilule, comme « Toutes les applications » */
+.pc .pilule {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--verre-bord);
+    border-radius: 4px;
+    color: var(--content);
+    font-size: 0.8125rem;
+    text-decoration: none;
+}
+
+.pc .pilule:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.pc .epingles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 560px) {
+    .pc .epingles {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.pc .epingle,
+.pc .recommande {
+    color: var(--content);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.pc .epingle:hover,
+.pc .recommande:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.pc .epingle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    height: 100%;
+    padding: 16px 8px;
+    text-align: center;
+}
+
+.pc .epingle .pastille {
+    width: 40px;
+    height: 40px;
+    margin: 0 0 8px;
+    border-radius: 8px;
+}
+
+.pc .epingle-nom {
+    font-size: 0.9375rem;
+}
+
+.pc .epingle-texte,
+.pc .recommande-texte {
+    font-size: 0.8125rem;
+    color: var(--muted);
+}
+
+.pc .recommande {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    column-gap: 14px;
+    align-items: center;
+    padding: 10px 8px;
+}
+
+.pc .recommande .pastille {
+    grid-row: 1 / span 2;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+.pc .epingle:focus-visible,
+.pc .recommande:focus-visible,
+.pc .pilule:focus-visible {
+    border-radius: 4px;
+}
+
+/* ---------- Sommaire des guides présenté comme un menu contextuel ---------- */
+
+.pc .sommaire {
+    padding: 8px;
+}
+
+.pc .sommaire h2 {
+    margin: 8px 12px 6px;
+    font-size: 0.8125rem;
+}
+
+.pc .sommaire ol {
+    padding: 0;
+    list-style: none;
+    counter-reset: sommaire;
+}
+
+.pc .sommaire li {
+    padding: 0;
+    counter-increment: sommaire;
+}
+
+.pc .sommaire li + li {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pc .sommaire a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 4px;
+    color: var(--content);
+    text-decoration: none;
+}
+
+.pc .sommaire a::before {
+    content: counter(sommaire);
+    width: 20px;
+    color: var(--muted);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.pc .sommaire a::after {
+    content: "›";
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 1.125rem;
+}
+
+.pc .sommaire a:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pc .epingle,
+    .pc .recommande {
+        transition: none;
+    }
+}

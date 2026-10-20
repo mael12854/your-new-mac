@@ -549,13 +549,26 @@ code {
     background: var(--accent);
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     border-radius: 999px;
     transition: background-color 0.15s ease;
 }
 
 .bouton:hover {
     background: var(--accent-hover);
+}
+
+/* Bouton secondaire à contour, comme « Précommander » sur apple.com */
+.bouton-contour {
+    background: transparent;
+    border: 1px solid var(--link);
+    color: var(--link);
+}
+
+.bouton-contour:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
 }
 
 .bouton .fleche {
@@ -867,4 +880,146 @@ footer {
 
 .illu-ls {
     max-width: 340px;
+}
+
+/* ---------- Raccourci entre le guide Mac et le guide PC ---------- */
+
+.bandeau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 48px;
+    padding: clamp(28px, 5vw, 44px) 24px;
+    background: var(--card);
+    border-radius: 28px;
+    color: var(--content);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.bandeau:hover {
+    transform: scale(1.01);
+}
+
+.bandeau:focus-visible {
+    border-radius: 28px;
+}
+
+.bandeau-titre {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.bandeau-texte {
+    color: var(--muted);
+}
+
+.bandeau-lien {
+    margin-top: 12px;
+    color: var(--link);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bandeau,
+    .bandeau:hover {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Fond d'écran bleu des illustrations PC */
+.i-win-a { stop-color: #bcd7ff; }
+.i-win-b { stop-color: #3d7be0; }
+
+@media (prefers-color-scheme: dark) {
+    .i-win-a { stop-color: #23407a; }
+    .i-win-b { stop-color: #0d2350; }
+}
+
+/* ---------- Icônes des logiciels ---------- */
+
+.apps > div {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: 16px;
+    align-items: start;
+}
+
+.apps dt,
+.apps dd {
+    grid-column: 2;
+}
+
+.app-icone {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 11px;
+}
+
+/* Pastille avec initiales quand l'app n'a pas d'icône */
+.app-icone-lettre {
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.app-vedette .app-icone-lettre {
+    background: var(--card);
+}
+
+@media (max-width: 420px) {
+    .apps > div {
+        grid-template-columns: 40px 1fr;
+        column-gap: 12px;
+    }
+    .app-icone {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Boutons de fenêtre façon Windows 11 */
+.i-fermer { fill: #c42b1c; }
+.i-trait-fin {
+    fill: none;
+    stroke: var(--content);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+}
+.i-trait-blanc {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+/* Photo dans un guide */
+.illu-photo {
+    max-width: 320px;
+}
+
+.illu-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Logo allongé posé dans une tuile blanche, pour garder un format d'icône */
+.app-icone-tuile {
+    padding: 5px;
+    background: #ffffff;
+}
+
+.illu-photo-large {
+    max-width: none;
 }

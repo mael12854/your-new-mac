@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Un guide simple et indépendant pour bien démarrer avec votre nouveau PC Windows.">
+    <title>Votre nouveau PC</title>
+    <link rel="icon" type="image/png" href="icone-windows.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="windows.css">
+</head>
+<body class="accueil pc">
+    <nav class="globalnav" aria-label="Navigation principale">
+        <div class="globalnav-inner">
+            <a class="globalnav-logo" href="index.html" aria-current="page">Votre nouveau PC</a>
+            <ul>
+                <li><a href="premiers-pas.html">Premiers pas</a></li>
+                <li><a href="mac.html">Je viens du Mac</a></li>
+                <li><a href="menu-demarrer.html">Menu Démarrer</a></li>
+                <li><a href="clavier.html">Clavier</a></li>
+                <li><a href="logiciels.html">Logiciels</a></li>
+                <li><a href="../index.html">Guide Mac</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <p class="surtitre">Tous les PC sous Windows 11</p>
+        <h1>Bienvenue sur PC.</h1>
+        <p class="accroche">Tout pour bien démarrer, simplement.</p>
+
+        <div class="actions">
+            <a class="bouton" href="premiers-pas.html">Commencer</a>
+            <a class="bouton bouton-contour" href="mac.html">Je viens du Mac</a>
+        </div>
+
+        <figure class="illu illu-hero">
+            <svg viewBox="0 0 300 186" role="img" aria-label="Un ordinateur portable sous Windows, ouvert, avec une fenêtre et la barre des tâches">
+                <defs>
+                    <linearGradient id="fond-pc" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" class="i-win-a"/>
+                        <stop offset="1" class="i-win-b"/>
+                    </linearGradient>
+                    <clipPath id="clip-pc">
+                        <rect x="37" y="17" width="226" height="138" rx="4"/>
+                    </clipPath>
+                </defs>
+                <rect class="i-bezel" x="30" y="10" width="240" height="152" rx="10"/>
+                <g clip-path="url(#clip-pc)">
+                    <rect x="37" y="17" width="226" height="138" fill="url(#fond-pc)"/>
+                    <rect class="i-fenetre" x="78" y="34" width="144" height="88" rx="6"/>
+                    <rect class="i-app-e" x="84" y="39" width="6" height="6" rx="1.5"/>
+                    <rect class="i-texte" x="93" y="40.5" width="30" height="3" rx="1.5"/>
+                    <path class="i-trait-fin" d="M184.5 42h5"/>
+                    <rect class="i-trait-fin" x="198.5" y="40.5" width="4" height="4" rx="0.8"/>
+                    <path class="i-trait-fin" d="M199.5 40.5V39.5H203.5V43.5H202.5"/>
+                    <path class="i-trait-fin" d="M212.5 39.5l5 5M217.5 39.5l-5 5"/>
+                    <rect class="i-texte" x="90" y="60" width="96" height="5" rx="2.5"/>
+                    <rect class="i-texte" x="90" y="72" width="116" height="5" rx="2.5"/>
+                    <rect class="i-texte" x="90" y="84" width="76" height="5" rx="2.5"/>
+                    <rect class="i-barre" x="37" y="140" width="226" height="15"/>
+                    <rect class="i-app-e" x="121" y="143.5" width="3.8" height="3.8" rx="0.6"/>
+                    <rect class="i-app-e" x="125.6" y="143.5" width="3.8" height="3.8" rx="0.6"/>
+                    <rect class="i-app-e" x="121" y="148.1" width="3.8" height="3.8" rx="0.6"/>
+                    <rect class="i-app-e" x="125.6" y="148.1" width="3.8" height="3.8" rx="0.6"/>
+                    <rect class="i-app-a" x="135" y="143.5" width="8.4" height="8.4" rx="2"/>
+                    <rect class="i-app-b" x="148" y="143.5" width="8.4" height="8.4" rx="2"/>
+                    <rect class="i-app-c" x="161" y="143.5" width="8.4" height="8.4" rx="2"/>
+                    <rect class="i-app-d" x="174" y="143.5" width="8.4" height="8.4" rx="2"/>
+                    <rect class="i-texte" x="232" y="145.5" width="24" height="4" rx="2"/>
+                </g>
+                <rect class="i-corps" x="14" y="162" width="272" height="10" rx="4"/>
+                <rect class="i-texte" x="125" y="162" width="50" height="3" rx="1.5"/>
+            </svg>
+        </figure>
+
+        <h2 class="titre-section">Par où commencer&#8239;?</h2>
+
+        <!-- Présenté comme le menu Démarrer de Windows 11 -->
+        <section class="demarrer" aria-label="Les guides">
+            <div class="demarrer-entete">
+                <h3 id="titre-epingle">Épinglé</h3>
+                <a class="pilule" href="premiers-pas.html">Commencer&nbsp;›</a>
+            </div>
+            <ul class="epingles" aria-labelledby="titre-epingle">
+                <li>
+                    <a class="epingle" href="premiers-pas.html">
+                        <span class="pastille citrus" aria-hidden="true"></span>
+                        <span class="epingle-nom">Premiers pas</span>
+                        <span class="epingle-texte">Les bases, pas à pas</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="epingle" href="menu-demarrer.html">
+                        <span class="pastille indigo" aria-hidden="true"></span>
+                        <span class="epingle-nom">Menu Démarrer</span>
+                        <span class="epingle-texte">Lancer et chercher vos apps</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="epingle" href="clavier.html">
+                        <span class="pastille blush" aria-hidden="true"></span>
+                        <span class="epingle-nom">Clavier</span>
+                        <span class="epingle-texte">Touches et raccourcis</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="epingle" href="logiciels.html">
+                        <span class="pastille silver" aria-hidden="true"></span>
+                        <span class="epingle-nom">Logiciels</span>
+                        <span class="epingle-texte">Une sélection gratuite</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="demarrer-entete">
+                <h3>Recommandé</h3>
+            </div>
+            <a class="recommande" href="mac.html">
+                <span class="pastille blush" aria-hidden="true"></span>
+                <span class="recommande-nom">J’avais un Mac</span>
+                <span class="recommande-texte">Retrouver ses repères sur PC</span>
+            </a>
+            <a class="recommande" href="../index.html">
+                <span class="pastille citrus" aria-hidden="true"></span>
+                <span class="recommande-nom">Vous avez un Mac&#8239;? Voir le guide Mac</span>
+                <span class="recommande-texte">Le même guide, pour le Mac</span>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        Guide indépendant, non affilié à Microsoft. Windows est une marque de Microsoft Corporation.
+    </footer>
+</body>
+</html>

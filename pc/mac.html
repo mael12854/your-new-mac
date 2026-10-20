@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Vous passez du Mac à un PC Windows ? Les équivalences et les différences à connaître.">
+    <title>Vous venez du Mac</title>
+    <link rel="icon" type="image/png" href="icone-windows.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="windows.css">
+</head>
+<body class="pc">
+    <nav class="globalnav" aria-label="Navigation principale">
+        <div class="globalnav-inner">
+            <a class="globalnav-logo" href="index.html">Votre nouveau PC</a>
+            <ul>
+                <li><a href="premiers-pas.html">Premiers pas</a></li>
+                <li><a href="mac.html" aria-current="page">Je viens du Mac</a></li>
+                <li><a href="menu-demarrer.html">Menu Démarrer</a></li>
+                <li><a href="clavier.html">Clavier</a></li>
+                <li><a href="logiciels.html">Logiciels</a></li>
+                <li><a href="../index.html">Guide Mac</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="guide">
+        <header>
+            <span class="pastille blush" aria-hidden="true"></span>
+            <h1>Vous venez du Mac</h1>
+            <p class="chapeau">Vous savez déjà vous servir d’un ordinateur. Il vous suffit de retrouver vos repères&#8239;: voici ce qui change sur un PC.</p>
+        </header>
+
+        <nav class="sommaire" aria-labelledby="titre-sommaire">
+            <h2 id="titre-sommaire">Au programme</h2>
+            <ol>
+                <li><a href="#equivalences">Les équivalences</a></li>
+                <li><a href="#raccourcis">⌘ devient Ctrl</a></li>
+                <li><a href="#fenetres">Fenêtres et apps</a></li>
+                <li><a href="#fichiers">Gérer ses fichiers</a></li>
+                <li><a href="#transfert">Récupérer vos données</a></li>
+            </ol>
+        </nav>
+
+        <ol class="etapes">
+            <li class="etape" id="equivalences">
+                <h2>Les équivalences</h2>
+                <table class="raccourcis">
+                    <caption class="sr-only">Équivalences entre Mac et Windows</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Sur Mac</th>
+                            <th scope="col">Sur PC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Finder</td><td>Explorateur de fichiers</td></tr>
+                        <tr><td>Dock</td><td>Barre des tâches</td></tr>
+                        <tr><td>Spotlight</td><td><a href="menu-demarrer.html">Menu Démarrer</a> (touche <kbd>⊞</kbd>, puis tapez)</td></tr>
+                        <tr><td>Réglages Système</td><td>Paramètres</td></tr>
+                        <tr><td>Moniteur d’activité</td><td>Gestionnaire des tâches</td></tr>
+                        <tr><td>App Store</td><td>Microsoft Store</td></tr>
+                        <tr><td>Safari</td><td>Microsoft Edge</td></tr>
+                        <tr><td>AirDrop</td><td>Partage de proximité, ou <a href="logiciels.html">LocalSend</a></td></tr>
+                    </tbody>
+                </table>
+            </li>
+
+            <li class="etape" id="raccourcis">
+                <h2>⌘ devient Ctrl</h2>
+                <p>La règle d’or&#8239;: presque tous vos raccourcis avec <kbd>⌘</kbd> fonctionnent avec <kbd>Ctrl</kbd> à la place. <kbd>Ctrl</kbd> + <kbd>C</kbd> copie, <kbd>Ctrl</kbd> + <kbd>V</kbd> colle, <kbd>Ctrl</kbd> + <kbd>Z</kbd> annule.</p>
+                <table class="raccourcis">
+                    <caption class="sr-only">Raccourcis Mac et leur équivalent PC</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Sur Mac</th>
+                            <th scope="col">Sur PC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><kbd>⌘</kbd> + <kbd>Tab</kbd></td><td><kbd>Alt</kbd> + <kbd>Tab</kbd></td></tr>
+                        <tr><td><kbd>⌘</kbd> + <kbd>Q</kbd></td><td><kbd>Alt</kbd> + <kbd>F4</kbd> pour fermer l’app</td></tr>
+                        <tr><td><kbd>⌘</kbd> + <kbd>Espace</kbd></td><td><kbd>⊞</kbd> puis tapez votre recherche</td></tr>
+                        <tr><td><kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>Échap</kbd></td><td><kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>Échap</kbd> (Gestionnaire des tâches)</td></tr>
+                        <tr><td><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>5</kbd></td><td><kbd>⊞</kbd> + <kbd>⇧</kbd> + <kbd>S</kbd> (capture d’écran)</td></tr>
+                        <tr><td><kbd>⌃</kbd> + <kbd>⌘</kbd> + <kbd>Q</kbd></td><td><kbd>⊞</kbd> + <kbd>L</kbd> (verrouiller)</td></tr>
+                        <tr><td><kbd>⌘</kbd> + <kbd>⌫</kbd> sur un fichier</td><td><kbd>Suppr</kbd></td></tr>
+                        <tr><td><kbd>Entrée</kbd> pour renommer</td><td><kbd>F2</kbd></td></tr>
+                    </tbody>
+                </table>
+                <p class="astuce">La touche <kbd>⌥</kbd> Option du Mac correspond à <kbd>Alt</kbd>. Pour les caractères cachés comme @ ou €, c’est <kbd>Alt Gr</kbd>&#8239;: tous les détails sur la page <a href="clavier.html">le clavier du PC</a>.</p>
+            </li>
+
+            <li class="etape" id="fenetres">
+                <h2>Fenêtres et apps</h2>
+                <div class="compare">
+                    <figure class="illu">
+                        <svg viewBox="0 0 160 76" role="img" aria-label="Fenêtre Mac : boutons rouge, jaune et vert à gauche">
+                            <rect class="i-cadre" x="2" y="2" width="156" height="72" rx="10"/>
+                            <circle class="rouge" cx="16" cy="13" r="4.5"/>
+                            <circle class="jaune" cx="29" cy="13" r="4.5"/>
+                            <circle class="vert" cx="42" cy="13" r="4.5"/>
+                            <rect class="i-texte" x="14" y="36" width="100" height="5" rx="2.5"/>
+                            <rect class="i-texte" x="14" y="48" width="80" height="5" rx="2.5"/>
+                        </svg>
+                        <figcaption>Mac&#8239;: boutons à gauche</figcaption>
+                    </figure>
+                    <figure class="illu">
+                        <svg viewBox="0 0 160 76" role="img" aria-label="Fenêtre Windows : boutons réduire, agrandir et fermer à droite">
+                            <rect class="i-cadre" x="2" y="2" width="156" height="72" rx="6"/>
+                            <rect class="i-app-e" x="10" y="9" width="8" height="8" rx="2"/>
+                            <rect class="i-texte" x="23" y="11" width="36" height="4" rx="2"/>
+                            <path class="i-trait-fin" d="M109 13h8"/>
+                            <rect class="i-trait-fin" x="127" y="11" width="6" height="6" rx="1"/>
+                            <path class="i-trait-fin" d="M128.6 11V9.4H135V15.8H133.4"/>
+                            <path class="i-trait-fin" d="M145 9l8 8M153 9l-8 8"/>
+                            <rect class="i-texte" x="14" y="36" width="100" height="5" rx="2.5"/>
+                            <rect class="i-texte" x="14" y="48" width="80" height="5" rx="2.5"/>
+                        </svg>
+                        <figcaption>PC&#8239;: boutons à droite</figcaption>
+                    </figure>
+                </div>
+                <ul>
+                    <li><strong>Les boutons des fenêtres sont à droite</strong>&#8239;: réduire (—), agrandir (□), fermer (×).</li>
+                    <li><strong>Fermer la fenêtre quitte en général l’app</strong>, contrairement au Mac. Quelques apps (messagerie, stockage en ligne) continuent en arrière-plan&#8239;: leur icône reste près de l’heure.</li>
+                    <li><strong>Les menus sont dans chaque fenêtre</strong>, et non dans une barre tout en haut de l’écran.</li>
+                </ul>
+            </li>
+
+            <li class="etape" id="fichiers">
+                <h2>Gérer ses fichiers</h2>
+                <ul>
+                    <li><strong>Déplacer un fichier</strong>&#8239;: <kbd>Ctrl</kbd> + <kbd>X</kbd> pour couper, puis <kbd>Ctrl</kbd> + <kbd>V</kbd> à l’endroit voulu. Le couper-coller marche directement, sans astuce.</li>
+                    <li><strong>Voir un fichier sans l’ouvrir</strong>&#8239;: dans l’Explorateur, <kbd>Alt</kbd> + <kbd>P</kbd> affiche un volet d’aperçu à droite.</li>
+                    <li><strong>Installer une app</strong>&#8239;: depuis le Microsoft Store, ou en ouvrant le fichier .exe ou .msi téléchargé sur le site officiel.</li>
+                    <li><strong>Désinstaller une app</strong>&#8239;: <strong>Paramètres &gt; Applications &gt; Applications installées</strong>, puis le menu «&#8239;…&#8239;» à côté de l’app.</li>
+                </ul>
+                <p class="astuce"><strong>Disques formatés pour Mac</strong> (APFS ou Mac OS étendu)&#8239;: Windows ne sait pas les lire. Pour un disque partagé entre Mac et PC, utilisez le format exFAT.</p>
+            </li>
+
+            <li class="etape" id="transfert">
+                <h2>Récupérer vos données</h2>
+                <ul>
+                    <li><strong>Photos et fichiers iCloud</strong>&#8239;: installez l’app <strong>iCloud pour Windows</strong> depuis le Microsoft Store, puis connectez-vous avec votre identifiant Apple.</li>
+                    <li><strong>Le reste</strong>&#8239;: copiez vos dossiers sur un disque externe formaté en exFAT, puis recopiez-les sur le PC.</li>
+                </ul>
+                <p class="astuce">Plus simple encore&#8239;: si vos fichiers sont sur OneDrive, Google Drive ou Dropbox, il suffit de vous connecter sur le PC.</p>
+            </li>
+        </ol>
+
+        <nav class="suite" aria-label="Navigation entre les guides">
+            <a class="retour" href="index.html">‹ Accueil</a>
+            <a class="bouton" href="clavier.html">Suite&#8239;: le clavier du PC&nbsp;›</a>
+        </nav>
+    </div>
+
+    <footer>
+        Guide indépendant, non affilié à Microsoft ni à Apple. Windows est une marque de Microsoft Corporation, Mac est une marque d’Apple Inc.
+    </footer>
+</body>
+</html>
