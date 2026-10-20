@@ -210,6 +210,79 @@ code {
     color: var(--muted);
 }
 
+/* Liste des logiciels */
+.apps {
+    margin: 0;
+}
+
+.apps > div {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.apps > div:first-child {
+    padding-top: 0;
+}
+
+.apps > div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.apps dt {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+
+.apps dd {
+    margin: 0;
+}
+
+.apps dd p {
+    margin: 0 0 8px;
+}
+
+/* LocalSend mis en avant */
+.apps .app-vedette {
+    margin-bottom: 16px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.badge {
+    padding: 2px 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.app-vedette .badge {
+    background: var(--card);
+}
+
+.app-lien {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 44px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.app-lien:hover {
+    text-decoration: underline;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
