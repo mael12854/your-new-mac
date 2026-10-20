@@ -8,13 +8,15 @@
     <title>Votre nouveau PC</title>
     <link rel="icon" type="image/png" href="icone-windows.png">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="windows.css">
 </head>
-<body class="accueil">
+<body class="accueil pc">
     <nav class="globalnav" aria-label="Navigation principale">
         <div class="globalnav-inner">
             <a class="globalnav-logo" href="index.html" aria-current="page">Votre nouveau PC</a>
             <ul>
                 <li><a href="premiers-pas.html">Premiers pas</a></li>
+                <li><a href="mac.html">Je viens du Mac</a></li>
                 <li><a href="menu-demarrer.html">Menu Démarrer</a></li>
                 <li><a href="clavier.html">Clavier</a></li>
                 <li><a href="logiciels.html">Logiciels</a></li>
@@ -30,7 +32,7 @@
 
         <div class="actions">
             <a class="bouton" href="premiers-pas.html">Commencer</a>
-            <a class="bouton bouton-contour" href="menu-demarrer.html">Le menu Démarrer</a>
+            <a class="bouton bouton-contour" href="mac.html">Je viens du Mac</a>
         </div>
 
         <figure class="illu illu-hero">
@@ -48,7 +50,12 @@
                 <g clip-path="url(#clip-pc)">
                     <rect x="37" y="17" width="226" height="138" fill="url(#fond-pc)"/>
                     <rect class="i-fenetre" x="78" y="34" width="144" height="88" rx="6"/>
-                    <path class="i-trait" d="M188 45h7M201 41.5h7v7h-7zM213 41.5l7 7M220 41.5l-7 7"/>
+                    <rect class="i-app-e" x="84" y="39" width="6" height="6" rx="1.5"/>
+                    <rect class="i-texte" x="93" y="40.5" width="30" height="3" rx="1.5"/>
+                    <path class="i-trait-fin" d="M184.5 42h5"/>
+                    <rect class="i-trait-fin" x="198.5" y="40.5" width="4" height="4" rx="0.8"/>
+                    <path class="i-trait-fin" d="M199.5 40.5V39.5H203.5V43.5H202.5"/>
+                    <path class="i-trait-fin" d="M212.5 39.5l5 5M217.5 39.5l-5 5"/>
                     <rect class="i-texte" x="90" y="60" width="96" height="5" rx="2.5"/>
                     <rect class="i-texte" x="90" y="72" width="116" height="5" rx="2.5"/>
                     <rect class="i-texte" x="90" y="84" width="76" height="5" rx="2.5"/>
@@ -68,47 +75,59 @@
             </svg>
         </figure>
 
-        <h2 class="titre-section" id="titre-guides">Par où commencer&#8239;?</h2>
-        <ul class="profils" aria-labelledby="titre-guides">
-            <li>
-                <a class="profil" href="premiers-pas.html">
-                    <span class="pastille citrus" aria-hidden="true"></span>
-                    <span class="profil-titre">C’est mon premier ordinateur.</span>
-                    <span class="profil-texte">Les bases, pas à pas.</span>
-                    <span class="profil-lien" aria-hidden="true">Découvrir&nbsp;›</span>
-                </a>
-            </li>
-            <li>
-                <a class="profil" href="menu-demarrer.html">
-                    <span class="pastille indigo" aria-hidden="true"></span>
-                    <span class="profil-titre">Le menu Démarrer.</span>
-                    <span class="profil-texte">Lancer, chercher et épingler vos apps.</span>
-                    <span class="profil-lien" aria-hidden="true">Découvrir&nbsp;›</span>
-                </a>
-            </li>
-            <li>
-                <a class="profil" href="clavier.html">
-                    <span class="pastille blush" aria-hidden="true"></span>
-                    <span class="profil-titre">Le clavier du PC.</span>
-                    <span class="profil-texte">Touches spéciales, raccourcis, caractères cachés.</span>
-                    <span class="profil-lien" aria-hidden="true">Découvrir&nbsp;›</span>
-                </a>
-            </li>
-            <li>
-                <a class="profil" href="logiciels.html">
-                    <span class="pastille silver" aria-hidden="true"></span>
-                    <span class="profil-titre">Logiciels pratiques.</span>
-                    <span class="profil-texte">Une sélection gratuite, avec les liens officiels.</span>
-                    <span class="profil-lien" aria-hidden="true">Découvrir&nbsp;›</span>
-                </a>
-            </li>
-        </ul>
+        <h2 class="titre-section">Par où commencer&#8239;?</h2>
 
-        <a class="bandeau" href="../index.html">
-            <span class="bandeau-titre">Vous avez un Mac&#8239;?</span>
-            <span class="bandeau-texte">Le même guide existe pour le Mac.</span>
-            <span class="bandeau-lien" aria-hidden="true">Voir le guide Mac&nbsp;›</span>
-        </a>
+        <!-- Présenté comme le menu Démarrer de Windows 11 -->
+        <section class="demarrer" aria-label="Les guides">
+            <div class="demarrer-entete">
+                <h3 id="titre-epingle">Épinglé</h3>
+                <a class="pilule" href="premiers-pas.html">Commencer&nbsp;›</a>
+            </div>
+            <ul class="epingles" aria-labelledby="titre-epingle">
+                <li>
+                    <a class="epingle" href="premiers-pas.html">
+                        <span class="pastille citrus" aria-hidden="true"></span>
+                        <span class="epingle-nom">Premiers pas</span>
+                        <span class="epingle-texte">Les bases, pas à pas</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="epingle" href="menu-demarrer.html">
+                        <span class="pastille indigo" aria-hidden="true"></span>
+                        <span class="epingle-nom">Menu Démarrer</span>
+                        <span class="epingle-texte">Lancer et chercher vos apps</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="epingle" href="clavier.html">
+                        <span class="pastille blush" aria-hidden="true"></span>
+                        <span class="epingle-nom">Clavier</span>
+                        <span class="epingle-texte">Touches et raccourcis</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="epingle" href="logiciels.html">
+                        <span class="pastille silver" aria-hidden="true"></span>
+                        <span class="epingle-nom">Logiciels</span>
+                        <span class="epingle-texte">Une sélection gratuite</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="demarrer-entete">
+                <h3>Recommandé</h3>
+            </div>
+            <a class="recommande" href="mac.html">
+                <span class="pastille blush" aria-hidden="true"></span>
+                <span class="recommande-nom">J’avais un Mac</span>
+                <span class="recommande-texte">Retrouver ses repères sur PC</span>
+            </a>
+            <a class="recommande" href="../index.html">
+                <span class="pastille citrus" aria-hidden="true"></span>
+                <span class="recommande-nom">Vous avez un Mac&#8239;? Voir le guide Mac</span>
+                <span class="recommande-texte">Le même guide, pour le Mac</span>
+            </a>
+        </section>
     </main>
 
     <footer>

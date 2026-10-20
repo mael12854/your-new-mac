@@ -8,13 +8,15 @@
     <title>Premiers pas sur PC</title>
     <link rel="icon" type="image/png" href="icone-windows.png">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="windows.css">
 </head>
-<body>
+<body class="pc">
     <nav class="globalnav" aria-label="Navigation principale">
         <div class="globalnav-inner">
             <a class="globalnav-logo" href="index.html">Votre nouveau PC</a>
             <ul>
                 <li><a href="premiers-pas.html" aria-current="page">Premiers pas</a></li>
+                <li><a href="mac.html">Je viens du Mac</a></li>
                 <li><a href="menu-demarrer.html">Menu Démarrer</a></li>
                 <li><a href="clavier.html">Clavier</a></li>
                 <li><a href="logiciels.html">Logiciels</a></li>
@@ -116,7 +118,12 @@
                         <g clip-path="url(#clip-ecran-pc)">
                             <rect x="8" y="8" width="304" height="180" fill="url(#fond-ecran-pc)"/>
                             <rect class="i-fenetre" x="56" y="30" width="176" height="104" rx="8"/>
-                            <path class="i-trait" d="M190 42h8M205 38h8v8h-8zM219 38l8 8M227 38l-8 8"/>
+                            <rect class="i-app-e" x="63" y="35.5" width="7" height="7" rx="1.5"/>
+                            <rect class="i-texte" x="74" y="37.5" width="36" height="3.5" rx="1.75"/>
+                            <path class="i-trait-fin" d="M189 39h6"/>
+                            <rect class="i-trait-fin" x="205" y="37.5" width="4.8" height="4.8" rx="0.9"/>
+                            <path class="i-trait-fin" d="M206.2 37.5V36.3H211V41.1H209.8"/>
+                            <path class="i-trait-fin" d="M221 36l6 6M227 36l-6 6"/>
                             <rect class="i-texte" x="68" y="58" width="120" height="5" rx="2.5"/>
                             <rect class="i-texte" x="68" y="70" width="150" height="5" rx="2.5"/>
                             <rect class="i-texte" x="68" y="82" width="100" height="5" rx="2.5"/>
@@ -133,14 +140,14 @@
                         </g>
                         <g class="i-repere"><circle cx="108" cy="178" r="9"/><text x="108" y="182" text-anchor="middle">1</text></g>
                         <g class="i-repere"><circle cx="246" cy="178" r="9"/><text x="246" y="182" text-anchor="middle">2</text></g>
-                        <g class="i-repere"><circle cx="246" cy="42" r="9"/><text x="246" y="46" text-anchor="middle">3</text></g>
+                        <g class="i-repere"><circle cx="246" cy="39" r="9"/><text x="246" y="43" text-anchor="middle">3</text></g>
                         <g class="i-repere"><circle cx="276" cy="100" r="9"/><text x="276" y="104" text-anchor="middle">4</text></g>
                     </svg>
                     <figcaption>
                         <ol class="legende-illu">
                             <li><strong>La barre des tâches</strong>, en bas&#8239;: le bouton Démarrer (les quatre carrés), puis les icônes de vos apps.</li>
                             <li><strong>La zone de notification</strong>, à droite&#8239;: le Wi-Fi, le son, la batterie, l’heure.</li>
-                            <li><strong>Les boutons de la fenêtre</strong>, en haut à droite&#8239;: réduire (—), agrandir (□), fermer (×).</li>
+                            <li><strong>Les boutons de la fenêtre</strong>, en haut à droite&#8239;: réduire (—) la range dans la barre des tâches, agrandir (□) la met en plein écran (l’icône devient alors deux carrés, pour la remettre à sa taille), fermer (×).</li>
                             <li><strong>Le bureau</strong>&#8239;: tout l’espace au milieu, où s’ouvrent les fenêtres.</li>
                         </ol>
                     </figcaption>

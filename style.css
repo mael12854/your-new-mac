@@ -986,3 +986,40 @@ footer {
         height: 40px;
     }
 }
+
+/* Boutons de fenêtre façon Windows 11 */
+.i-fermer { fill: #c42b1c; }
+.i-trait-fin {
+    fill: none;
+    stroke: var(--content);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+}
+.i-trait-blanc {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+/* Photo dans un guide */
+.illu-photo {
+    max-width: 320px;
+}
+
+.illu-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Logo allongé posé dans une tuile blanche, pour garder un format d'icône */
+.app-icone-tuile {
+    padding: 5px;
+    background: #ffffff;
+}
+
+.illu-photo-large {
+    max-width: none;
+}
