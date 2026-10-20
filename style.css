@@ -1,8 +1,8 @@
 /* Couleurs : contrastes mesurés (WCAG) indiqués à côté */
 :root {
-    --surface: #f3f5f8;
+    --surface: #f5f5f7;
     --card: #ffffff;
-    --content: #16181d;      /* 17,8:1 sur la carte */
+    --content: #1d1d1f;      /* 16,8:1 sur la carte */
     --muted: #555c69;        /* 6,7:1 sur la carte, 6,2:1 sur le fond */
     --accent: #1f5bd0;       /* texte blanc : 6,1:1 */
     --accent-hover: #1a4fb8; /* texte blanc : 7,4:1 */
@@ -30,9 +30,9 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --surface: #101217;
-        --card: #1a1d24;
-        --content: #eef0f4;      /* 14,8:1 */
+        --surface: #000000;
+        --card: #1c1c1e;
+        --content: #f5f5f7;      /* 17,2:1 */
         --muted: #a6acb8;        /* 7,4:1 */
         --accent: #2e66d6;       /* texte blanc : 5,3:1 */
         --accent-hover: #2558c4;
@@ -75,8 +75,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    padding: 32px 16px;
+    padding: 0 0 40px;
     background: var(--surface);
     color: var(--content);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -84,8 +83,79 @@ body {
     line-height: 1.5;
 }
 
-body.accueil {
-    justify-content: center;
+/* ---------- Barre de navigation (fine et translucide, comme sur apple.com) ---------- */
+
+.globalnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background: rgba(245, 245, 247, 0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--line);
+}
+
+@media (prefers-color-scheme: dark) {
+    .globalnav {
+        background: rgba(22, 22, 23, 0.8);
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .globalnav {
+        background: var(--surface);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+}
+
+.globalnav-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 980px;
+    min-height: 48px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.globalnav-logo {
+    flex: none;
+    color: var(--content);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.globalnav ul {
+    display: flex;
+    gap: 22px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.globalnav ul a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--content);
+    font-size: 0.8125rem;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.85;
+}
+
+.globalnav ul a:hover,
+.globalnav ul a[aria-current="page"] {
+    opacity: 1;
+}
+
+.globalnav ul a[aria-current="page"] {
+    font-weight: 600;
 }
 
 main {
@@ -97,19 +167,72 @@ main {
     box-shadow: var(--shadow);
 }
 
-/* Accueil : pas de carte, le contenu respire directement sur le fond */
+/* ---------- Accueil ---------- */
+
 .accueil main {
-    max-width: 640px;
-    padding: 48px 0;
+    max-width: 980px;
+    padding: clamp(48px, 10vw, 96px) 16px 48px;
     background: none;
     text-align: center;
 }
 
+.surtitre {
+    margin: 0 0 8px;
+    font-size: clamp(1.0625rem, 2.5vw, 1.3125rem);
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.accueil h1 {
+    font-size: clamp(2.75rem, 10vw, 5rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+}
+
+.accroche {
+    margin: 0 auto 28px;
+    max-width: 36ch;
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 28px;
+    margin-bottom: 48px;
+}
+
+.lien-chevron {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1.0625rem;
+    text-decoration: none;
+}
+
+.lien-chevron:hover {
+    text-decoration: underline;
+}
+
+.titre-section {
+    margin: clamp(56px, 10vw, 96px) 0 28px;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
 h1 {
     margin: 0 0 16px;
-    font-size: clamp(2.25rem, 7vw, 3.5rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 700;
-    line-height: 1.08;
+    line-height: 1.06;
     letter-spacing: -0.03em;
     text-wrap: balance;
 }
@@ -328,56 +451,70 @@ code {
 
 /* ---------- Choix du profil (accueil) ---------- */
 
+/* Grandes tuiles, 2 par ligne sur grand écran */
 .profils {
     display: grid;
-    gap: 10px;
+    gap: 16px;
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: left;
 }
 
+@media (min-width: 640px) {
+    .profils {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .profil {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    column-gap: 16px;
-    min-height: 72px;
-    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    min-height: 220px;
+    padding: clamp(24px, 4vw, 36px);
     background: var(--card);
-    border: 1px solid transparent;
-    border-radius: 18px;
+    border-radius: 28px;
     color: var(--content);
     text-decoration: none;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
+    transition: transform 0.3s ease;
 }
 
 .profil:hover {
-    border-color: var(--link);
+    transform: scale(1.01);
 }
 
 .profil:focus-visible {
-    border-radius: 14px;
+    border-radius: 28px;
 }
 
 .profil-titre {
-    grid-column: 2;
-    font-weight: 600;
+    font-size: clamp(1.375rem, 3vw, 1.625rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
 }
 
 .profil-texte {
-    grid-column: 2;
-    font-size: 0.9375rem;
+    font-size: 1.0625rem;
     color: var(--muted);
+}
+
+.profil-lien {
+    margin-top: auto;
+    padding-top: 16px;
+    color: var(--link);
+    font-size: 1.0625rem;
 }
 
 /* Pastille aux couleurs du MacBook Neo : décorative, le texte porte le sens */
 .pastille {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    width: 36px;
-    height: 24px;
-    border-radius: 6px;
+    display: block;
+    width: 44px;
+    height: 28px;
+    margin-bottom: 18px;
+    border-radius: 7px;
     background: var(--couleur, var(--mac-silver));
 }
 
@@ -390,18 +527,6 @@ code {
 .guide header .pastille {
     display: block;
     margin-bottom: 24px;
-}
-
-.profil .fleche {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    color: var(--link);
-    font-size: 1.25rem;
-    transition: transform 0.15s ease;
-}
-
-.profil:hover .fleche {
-    transform: translateX(3px);
 }
 
 /* Lien vers le guide suivant, en bas des pages */
@@ -455,7 +580,8 @@ a:focus-visible {
 
 .guide {
     width: 100%;
-    max-width: 680px;
+    max-width: 712px;
+    padding: 0 16px;
 }
 
 .retour {
@@ -471,7 +597,7 @@ a:focus-visible {
 }
 
 .guide header {
-    margin: 32px 0 48px;
+    margin: clamp(40px, 8vw, 80px) 0 48px;
 }
 
 .guide header .chapeau {
@@ -516,32 +642,25 @@ a:focus-visible {
     border-radius: 24px;
     box-shadow: var(--shadow);
     counter-increment: etape;
-    scroll-margin-top: 16px;
+    scroll-margin-top: 64px;
 }
 
 .etape h2 {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin: 0 0 12px;
-    font-size: clamp(1.3rem, 4vw, 1.5rem);
-    line-height: 1.25;
+    margin: 0 0 16px;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
-/* Numéro d'étape : le guide se lit dans l'ordre */
+/* Numéro d'étape en surtitre discret : le guide se lit dans l'ordre */
 .etape h2::before {
-    content: counter(etape);
-    flex: none;
-    display: inline-grid;
-    place-items: center;
-    width: 1.6em;
-    height: 1.6em;
-    background: var(--key-top);
-    border: 1px solid var(--key-edge);
-    box-shadow: 0 2px 0 var(--key-edge);
-    color: var(--content);
-    border-radius: 8px;
-    font-size: 0.8em;
+    content: "Étape " counter(etape);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--muted);
 }
 
 .etape p {
@@ -624,8 +743,8 @@ a:focus-visible {
 }
 
 .illu-hero {
-    max-width: 300px;
-    margin: 0 auto 40px;
+    max-width: 440px;
+    margin: 0 auto;
 }
 
 .legende-illu {
@@ -714,10 +833,13 @@ a:focus-visible {
 /* ---------- Pied de page ---------- */
 
 footer {
-    max-width: 600px;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 48px;
+    padding: 16px 16px 0;
+    border-top: 1px solid var(--line);
     font-size: 0.8125rem;
     color: var(--muted);
-    text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -726,9 +848,11 @@ footer {
     }
     .bouton,
     .bouton .fleche,
-    .profil,
-    .profil .fleche {
+    .profil {
         transition: none;
+    }
+    .profil:hover {
+        transform: none;
     }
     html {
         scroll-behavior: auto;

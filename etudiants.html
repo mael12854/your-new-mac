@@ -10,9 +10,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="guide">
-        <a class="retour" href="index.html">← Accueil</a>
+    <nav class="globalnav" aria-label="Navigation principale">
+        <div class="globalnav-inner">
+            <a class="globalnav-logo" href="index.html">Votre nouveau Mac</a>
+            <ul>
+                <li><a href="first-pc.html">Premiers pas</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="etudiants.html" aria-current="page">Études</a></li>
+                <li><a href="clavier.html">Clavier</a></li>
+                <li><a href="logiciels.html">Logiciels</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <div class="guide">
         <header>
             <span class="pastille blush" aria-hidden="true"></span>
             <h1>Un Mac pour vos études</h1>
@@ -90,10 +101,9 @@
         </ol>
 
         <nav class="suite" aria-label="Navigation entre les guides">
-            <a class="retour" href="index.html">← Accueil</a>
+            <a class="retour" href="index.html">‹ Accueil</a>
             <a class="bouton" href="logiciels.html">
-                Suite&#8239;: les logiciels pratiques
-                <span class="fleche" aria-hidden="true">→</span>
+                Suite&#8239;: les logiciels pratiques&nbsp;›
             </a>
         </nav>
     </div>
