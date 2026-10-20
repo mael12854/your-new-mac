@@ -6,11 +6,17 @@
     --muted: #555c69;        /* 6,7:1 sur la carte, 6,2:1 sur le fond */
     --accent: #1f5bd0;       /* texte blanc : 6,1:1 */
     --accent-hover: #1a4fb8; /* texte blanc : 7,4:1 */
+    --link: #1f5bd0;         /* 6,1:1 sur la carte, 5,6:1 sur le fond */
     --line: #e3e6eb;
     --key-top: #f7f8fa;
     --key-side: #d9dde4;
     --key-edge: #c3c8d1;
-    --shadow: 0 1px 2px rgba(22, 24, 29, 0.04), 0 8px 32px rgba(22, 24, 29, 0.06);
+    --shadow: none;
+    /* Couleurs des MacBook, en pastilles décoratives (une par profil) */
+    --mac-citrus: #e2e88c;
+    --mac-blush: #efcdd2;
+    --mac-indigo: #4b5679;
+    --mac-silver: #d6d9de;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,11 +27,13 @@
         --muted: #a6acb8;        /* 7,4:1 */
         --accent: #2e66d6;       /* texte blanc : 5,3:1 */
         --accent-hover: #2558c4;
+        --link: #8ab4ff;         /* 8,1:1 sur la carte, 9,0:1 sur le fond */
         --line: #2c3039;
         --key-top: #2a2e37;
         --key-side: #1f222a;
         --key-edge: #3a3f4a;
-        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.35);
+        --shadow: none;
+        --mac-silver: #9ea3ab;
     }
 }
 
@@ -73,16 +81,20 @@ main {
     box-shadow: var(--shadow);
 }
 
+/* Accueil : pas de carte, le contenu respire directement sur le fond */
 .accueil main {
+    max-width: 640px;
+    padding: 48px 0;
+    background: none;
     text-align: center;
 }
 
 h1 {
-    margin: 0 0 12px;
-    font-size: clamp(2rem, 6vw, 2.75rem);
+    margin: 0 0 16px;
+    font-size: clamp(2.25rem, 7vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
     text-wrap: balance;
 }
 
@@ -95,7 +107,7 @@ h1 {
 }
 
 a {
-    color: var(--accent);
+    color: var(--link);
 }
 
 /* ---------- Élément signature : la touche de clavier ---------- */
@@ -294,7 +306,95 @@ code {
 
 .question {
     margin: 0 0 16px;
+    font-size: 1.0625rem;
     font-weight: 600;
+}
+
+/* ---------- Choix du profil (accueil) ---------- */
+
+.profils {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.profil {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 16px;
+    min-height: 72px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid transparent;
+    border-radius: 18px;
+    color: var(--content);
+    text-decoration: none;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.profil:hover {
+    border-color: var(--link);
+}
+
+.profil:focus-visible {
+    border-radius: 14px;
+}
+
+.profil-titre {
+    grid-column: 2;
+    font-weight: 600;
+}
+
+.profil-texte {
+    grid-column: 2;
+    font-size: 0.9375rem;
+    color: var(--muted);
+}
+
+/* Pastille aux couleurs du MacBook Neo : décorative, le texte porte le sens */
+.pastille {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 36px;
+    height: 24px;
+    border-radius: 6px;
+    background: var(--couleur, var(--mac-silver));
+}
+
+.citrus { --couleur: var(--mac-citrus); }
+.blush  { --couleur: var(--mac-blush); }
+.indigo { --couleur: var(--mac-indigo); }
+.silver { --couleur: var(--mac-silver); }
+
+/* Rappel de la couleur du profil en tête de chaque guide */
+.guide header .pastille {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.profil .fleche {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    color: var(--link);
+    font-size: 1.25rem;
+    transition: transform 0.15s ease;
+}
+
+.profil:hover .fleche {
+    transform: translateX(3px);
+}
+
+/* Lien vers le guide suivant, en bas des pages */
+.suite {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
 
 /* ---------- Bouton ---------- */
@@ -326,7 +426,7 @@ code {
 }
 
 a:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--link);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -355,7 +455,7 @@ a:focus-visible {
 }
 
 .guide header {
-    margin: 8px 0 32px;
+    margin: 32px 0 48px;
 }
 
 .guide header .chapeau {
@@ -365,9 +465,9 @@ a:focus-visible {
 
 .sommaire {
     margin: 0 0 32px;
-    padding: 20px 24px;
+    padding: 24px 28px;
     background: var(--card);
-    border-radius: 16px;
+    border-radius: 24px;
     box-shadow: var(--shadow);
 }
 
@@ -395,9 +495,9 @@ a:focus-visible {
 
 .etape {
     margin-bottom: 16px;
-    padding: clamp(24px, 5vw, 36px);
+    padding: clamp(24px, 6vw, 44px);
     background: var(--card);
-    border-radius: 20px;
+    border-radius: 24px;
     box-shadow: var(--shadow);
     counter-increment: etape;
     scroll-margin-top: 16px;
@@ -448,10 +548,9 @@ a:focus-visible {
 
 .astuce {
     margin-top: 16px;
-    padding: 12px 16px;
-    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
     background: var(--surface);
-    border-radius: 0 10px 10px 0;
+    border-radius: 14px;
     font-size: 0.9375rem;
 }
 
@@ -488,7 +587,6 @@ a:focus-visible {
 
 .suite {
     margin: 32px 0 0;
-    text-align: center;
 }
 
 /* ---------- Pied de page ---------- */
@@ -505,7 +603,9 @@ footer {
         animation: none;
     }
     .bouton,
-    .bouton .fleche {
+    .bouton .fleche,
+    .profil,
+    .profil .fleche {
         transition: none;
     }
     html {
