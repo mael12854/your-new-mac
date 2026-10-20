@@ -446,3 +446,18 @@ body.pc {
         transition: none;
     }
 }
+
+/* ---------- Couleurs du guide PC : des bleus Windows, pas les teintes du MacBook Neo ---------- */
+
+/* Pastilles des guides : quatre dégradés de bleu bien distincts */
+.pc .citrus { --couleur: linear-gradient(135deg, #6bd3ff, #0079d4); }
+.pc .indigo { --couleur: linear-gradient(135deg, #5b8cff, #1a3fbf); }
+.pc .blush  { --couleur: linear-gradient(135deg, #8ee6ff, #2b88d8); }
+.pc .silver { --couleur: linear-gradient(135deg, #a9c4ff, #4466d6); }
+
+/* Petites icônes d'apps dans les dessins (barre des tâches, menu Démarrer) */
+.pc .i-app-a { fill: #6bd3ff; }
+.pc .i-app-b { fill: #2b88d8; }
+.pc .i-app-c { fill: #1a3fbf; }
+.pc .i-app-d { fill: #a9c4ff; }
+.pc .i-app-e { fill: #0079d4; }
